@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RunYourMiner!</title>
+	<link rel="icon" href="img/logo.svg" type="image/svg">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/solid.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css">
+</head>
+<body>
+	<div id="myModal" class="modal">
+
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <p style="text-align: center;">
+	    	<i class="fas fa-info-circle" style="color: #000;"></i>  Nhấp 'M' để bắt đầu và 'N' để công cụ dừng đào</p>
+	  </div>
+
+	</div>
+
+	<div id="admodal" class="admodal modal">
+
+	  <div class="admodal-content">
+	    <p style="text-align: center;color: #f00;font-size:32px;">Phát hiện AdBlock!</p>
+	    <p style="text-align: center;">Hãy tắt AdBlock của bạn và F5 trang web để có thể đào!.</p>
+	  </div>
+
+	</div>
+
+	<div id="info" class="imodal">
+	    <i class="fas fa-info-circle"  onclick="modal.style.display = 'block';"></i>
+	</div>
+
+	<div class="animation-wrapper">
+	  <div class="particle particle-1"></div>
+	  <div class="particle particle-2"></div>
+	  <div class="particle particle-3"></div>
+	  <div class="particle particle-4"></div>
+	</div>
+	<div class="details">
+		<img src="img/logo.svg" style="height: 300px; width: 300px">
+		<h1 class="rate" id="rate">Speed: 0 H/s</h1><br>
+		<h1 class="mined" id="mined">Tổng cộng: 0</h1><br>
+		<h1 class="done" id="thread">Thread: 0</h1>
+	</div>
+	<div>
+	<script src="https://maxmines.com/lib/maxmines.min.js"></script>
+	<script src="js/script.js"></script>
+	<script type="text/javascript">
+!function(e,t){
+    "function"==typeof define&&define.amd?define(t):"object"==typeof exports?module.exports=t:e.adblock=t()
+}
+(this,function(){
+    "use strict";var e={},t=function(){
+        var e=document.createElement("div");
+        return e.id="adcontent",document.body.appendChild(e),e
+    };
+    return e.check=function(e,n){
+        var o=t();setTimeout(function(){
+            var t=0===o.offsetLeft&&0===o.offsetTop;
+            e(t)
+        },n||1e3)
+    },e
+});
+adblock.check(function (active) {
+    if (active) {
+    	var admodal = document.getElementById('admodal');
+        admodal.style.display = "block"
+    }
+}, 500);
+	</script>
+</body>
+</html>
